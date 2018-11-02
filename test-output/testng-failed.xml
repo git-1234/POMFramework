@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.hubspot.qa.tests.DealsPageTest">
+      <class name="com.hubspot.qa.tests.ContactsPageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="createDealTest" invocation-numbers="0 1"/>
+          <include name="createContactTest"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- com.hubspot.qa.tests.DealsPageTest -->
+      </class> <!-- com.hubspot.qa.tests.ContactsPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

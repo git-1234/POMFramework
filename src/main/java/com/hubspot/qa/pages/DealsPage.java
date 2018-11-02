@@ -15,6 +15,7 @@ public class DealsPage extends BasePage {
 
 	@FindBy(xpath = "//span[text()='Create deal']")
 	WebElement createDeal;
+	
 
 	@FindBy(xpath = "//input[@id='uid-ctrl-1']")
 	WebElement dealname;
@@ -37,7 +38,7 @@ public class DealsPage extends BasePage {
 	}
 
 	public void createNewDeal(String dealName, String pipeLine, String dealStage, String totalAmount) {
-		//Select select = null;
+		
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(createDeal));
 		createDeal.click();
@@ -60,14 +61,8 @@ public class DealsPage extends BasePage {
 			}
 		}
 		
-		//select = new Select(pipeline);
-		//select.selectByVisibleText(pipeLine);
 
 		wait.until(ExpectedConditions.elementToBeClickable(dealstage));
-		// dealstage.sendKeys(dealStage);//*[@id="dropdown-198"]/div/ul/li/button/span/span/span
-		// *[@id="dropdown-198"]/div/ul/li[4]/button/span/span/span
-
-		// *[@id="dropdown-203"]/div/ul/li[2]/button/span/span/span
 		dealstage.click();
 		List<WebElement> stageList = driver.findElements(By.xpath("//*[@id='dropdown-198']/div/ul/li/button/span/span/span"));
 		System.out.println(stageList);
@@ -80,9 +75,7 @@ public class DealsPage extends BasePage {
 				break;
 			}
 		}
-		//select = new Select(dealstage);
-		//select.selectByVisibleText(dealStage);
-
+		
 		wait.until(ExpectedConditions.elementToBeClickable(amount));
 
 		amount.sendKeys(totalAmount);
@@ -90,7 +83,7 @@ public class DealsPage extends BasePage {
 		wait.until(ExpectedConditions.elementToBeClickable(createDealSecondBtn));
 		createDealSecondBtn.click();
 		
-		driver.navigate().refresh();
+
 	}
 
 }
